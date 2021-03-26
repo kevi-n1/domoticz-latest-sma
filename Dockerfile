@@ -3,12 +3,13 @@ FROM linuxserver/domoticz:latest
 ENV SBFSPOTDIR=/opt/sbfspot
 ENV SMADATA=/var/smadata
 
-RUN apt-get install --no-cache sqlite \
-                       sqlite-dev \
-                       make \
-                       boost-dev \
-                       g++ \
-                       bluez-dev
+RUN apt-get update && apt-get install -y \
+  sqlite \
+  sqlite-dev \
+  make \
+  boost-dev \
+  g++ \
+  bluez-dev
 
 ADD dist/SBFspot*.tar.gz /sbfspot.3/
 ADD dist/misc.patch /sbfspot.3/misc.patch
