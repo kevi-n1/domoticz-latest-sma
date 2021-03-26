@@ -1,0 +1,11 @@
+--- SBFspot/misc.h
++++ SBFspot2/misc.h
+@@ -38,6 +38,7 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <stdio.h>
++#include <sys/select.h>
+ 
+ #define COMMBUFSIZE 2048 // Size of Communications Buffer (Bluetooth/Ethernet)
+ 
+

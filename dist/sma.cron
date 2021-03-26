@@ -1,0 +1,1 @@
+* * * * * /opt/sbfspot/SBFspot -v -cfg/config/SBFspot.cfg > /dev/null
