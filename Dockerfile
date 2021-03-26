@@ -4,12 +4,12 @@ ENV SBFSPOTDIR=/opt/sbfspot
 ENV SMADATA=/var/smadata
 
 RUN apt-get update && apt-get install -y \
-  sqlite \
-  sqlite-dev \
+  sqlite3 \
+  sqlite-dev3 \
   make \
-  boost-dev \
+  libboost-all-dev \
   g++ \
-  bluez-dev
+  bluez libbluetooth-dev
 
 ADD dist/SBFspot*.tar.gz /sbfspot.3/
 ADD dist/misc.patch /sbfspot.3/misc.patch
