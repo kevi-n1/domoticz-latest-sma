@@ -6,7 +6,7 @@ ENV SMADATA=/var/smadata
 RUN apt-get update && apt-get install -y \
   apt-transport-https \
   sqlite3 \
-  sqlite-dev3 \
+  libsqlite3-dev \
   make \
   libboost-all-dev \
   g++ \
