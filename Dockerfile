@@ -1,4 +1,4 @@
-FROM rootphish/domoticz:latest
+FROM linuxserver/domoticz:latest
 
 ENV SBFSPOTDIR=/opt/sbfspot
 ENV SMADATA=/var/smadata
