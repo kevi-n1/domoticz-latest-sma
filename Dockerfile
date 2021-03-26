@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
   make \
   libboost-all-dev \
   g++ \
+  patch \
   bluez libbluetooth-dev
 
 ADD dist/SBFspot*.tar.gz /sbfspot.3/
