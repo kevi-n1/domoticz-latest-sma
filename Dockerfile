@@ -3,7 +3,7 @@ FROM linuxserver/domoticz:latest
 ENV SBFSPOTDIR=/opt/sbfspot
 ENV SMADATA=/var/smadata
 
-RUN apk add --no-cache sqlite \
+RUN apt-get install --no-cache sqlite \
                        sqlite-dev \
                        make \
                        boost-dev \
@@ -33,6 +33,6 @@ RUN mv /usr/local/bin/sbfspot.3/* $SBFSPOTDIR && \
 
 RUN sqlite3 $SMADATA/SBFspot.db < $SBFSPOTDIR/CreateSQLiteDB.sql
 
-RUN apk del g++ make
+RUN apt-get clean g++ make
 
 ENTRYPOINT ["/entry.sh"]
