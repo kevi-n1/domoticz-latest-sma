@@ -1,10 +1,12 @@
-FROM _/debian
+FROM debian
 
 ENV SBFSPOTDIR=/opt/sbfspot
 ENV SMADATA=/var/smadata
 
 RUN apt-get update && apt-get install -y \
   curl
+
+RUN curl -sSL install.domoticz.com | sudo bash
 
 #ADD dist/SBFspot*.tar.gz /sbfspot.3/
 # dist/misc.patch /sbfspot.3/misc.patch
