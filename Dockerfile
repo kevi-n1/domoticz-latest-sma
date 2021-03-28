@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
   liblua5.3-dev \
   uthash-dev
 
-RUN apt remove --purge --auto-remove cmake
+RUN apt-get remove --auto-remove cmake
 
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0.tar.gz
 RUN tar -xzvf cmake-3.19.3.tar.gz
