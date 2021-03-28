@@ -5,6 +5,7 @@ ENV SMADATA=/var/smadata
 
 RUN apt-get update && apt-get install -y \
   apt-transport-https \
+  wget \
   curl \
   make \
   gcc \
