@@ -3,7 +3,6 @@ FROM debian
 ENV SBFSPOTDIR=/opt/sbfspot
 ENV SMADATA=/var/smadata
 
-RUN sudo dpkg-reconfigure tzdata
 RUN apt-get update && apt-get install -y \
   curl \
   make \
