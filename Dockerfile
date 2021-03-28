@@ -4,6 +4,7 @@ ENV SBFSPOTDIR=/opt/sbfspot
 ENV SMADATA=/var/smadata
 
 RUN apt-get update && apt-get install -y \
+  apt-transport-https \
   curl \
   make \
   gcc \
@@ -18,7 +19,7 @@ RUN apt-get update && apt-get install -y \
   liblua5.3-dev \
   uthash-dev
 
-RUN sudo apt remove --purge --auto-remove cmake
+RUN apt remove --purge --auto-remove cmake
 
 RUN wget https://github.com/Kitware/CMake/releases/download/v3.20.0/cmake-3.20.0.tar.gz
 RUN tar -xzvf cmake-3.19.3.tar.gz
@@ -26,7 +27,7 @@ RUN rm cmake-3.19.3.tar.gz
 RUN cd cmake-3.19.3
 RUN ./bootstrap
 RUN make
-RUN sudo make install
+RUN make install
 RUN cd ..
 RUN rm -Rf cmake-3.19.3
 
@@ -39,14 +40,14 @@ RUN tar xfz boost_1_75_0.tar.gz
 RUN cd boost_1_75_0/
 RUN ./bootstrap.sh
 RUN ./b2 stage threading=multi link=static --with-thread --with-system
-RUN sudo ./b2 install threading=multi link=static --with-thread --with-system
+RUN ./b2 install threading=multi link=static --with-thread --with-system
 RUN cd ../../
-RUN sudo rm -Rf boost/
+RUN rm -Rf boost/
 
 RUN cd open-zwave-read-only
 RUN git pull
 RUN make 
-RUN sudo make install
+RUN make install
 
 RUN git clone https://github.com/domoticz/domoticz.git dev-domoticz
 
